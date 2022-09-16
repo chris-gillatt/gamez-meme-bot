@@ -1,4 +1,4 @@
-name: send-a-joke
+name: send-a-meme
 on:
   schedule:
     - cron:  '0 17 * * *'
