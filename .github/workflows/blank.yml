@@ -1,0 +1,16 @@
+name: send-a-joke
+on:
+  schedule:
+    - cron:  '0 17 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Send it, yo 
+        env:
+          WEBHOOK: ${{ secrets.WEBHOOK }}
+        run: ./send-meme.sh
