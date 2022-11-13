@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: chris-gillatt/gamez-meme-bot@master
+      - uses: chris-gillatt/gamez-meme-bot@main
         with:
           API_KEY: ${{ secrets.WORKFLOW_KEEP_ALIVE_TOKEN }}
       - uses: gautamkrishnar/keepalive-workflow@1.0.10
