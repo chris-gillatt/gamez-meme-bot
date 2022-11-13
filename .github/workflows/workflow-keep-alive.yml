@@ -1,7 +1,7 @@
 name: workflow-keep-alive
 on:
   schedule:
-    - cron:  '16 10 13 * *'
+    - cron:  '15 16 13 * *'
     
 jobs:
   update-readme:
