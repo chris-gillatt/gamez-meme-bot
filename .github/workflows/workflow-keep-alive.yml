@@ -1,0 +1,15 @@
+name: workflow-keep-alive
+on:
+  schedule:
+    - cron:  '16 10 13 * *'
+    
+jobs:
+  update-readme:
+    name: Update this repo's README
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: chris-gillatt/gamez-meme-bot@master
+        with:
+          API_KEY: ${{ secrets.workflow-keep-alive-token }}
+      - uses: gautamkrishnar/keepalive-workflow@@1.0.10
