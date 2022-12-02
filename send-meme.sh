@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 # A script to send a meme to gamez Discord channel.  Intended to be triggered by cron.
 
 post_meme () {
