@@ -5,10 +5,11 @@ on:
   workflow_dispatch:
     
 jobs:
-  update-readme:
-    name: Update this repo's README
+  keepalive-job:
+    name: Keepalive Workflow
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
     steps:
       - uses: actions/checkout@v4
-      - uses: gautamkrishnar/keepalive-workflow@2.0.6
-
+      - uses: gautamkrishnar/keepalive-workflow@v2
