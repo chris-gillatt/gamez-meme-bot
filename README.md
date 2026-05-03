@@ -2,5 +2,13 @@
 
 Meme bot to post to the Gamez Discord server. 
 
-Posts a meme every day at 20:00 UTC.
+Posts a meme four times per day, every six hours.
+
+## Workflow
+
+The GitHub Actions workflow runs on a six-hour schedule and also supports manual dispatch.
+
+Configure the `WEBHOOK` repository secret with the Discord webhook URL before enabling the workflow.
+
+If the repository is inactive for long enough, GitHub may automatically disable scheduled runs. Re-enable the workflow from the Actions tab if that happens.
 

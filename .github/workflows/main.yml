@@ -1,16 +1,25 @@
 name: send-a-meme
+
 on:
   schedule:
     - cron:  '0 */6 * * *'
 
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: send-a-meme
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      WEBHOOK: ${{ secrets.WEBHOOK }}
     steps:
-      - uses: actions/checkout@v4
-      - name: Send it, yo 
-        env:
-          WEBHOOK: ${{ secrets.WEBHOOK }}
+      - uses: actions/checkout@v6
+      - name: Send meme
         run: ./send-meme.sh
